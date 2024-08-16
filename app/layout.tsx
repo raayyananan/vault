@@ -19,7 +19,7 @@ export default function RootLayout({
       <head>
         <title>Vault in the Clouds</title>
       </head>
-      <body className={raleway.className}>{children}</body>
+      <body className={`${raleway.className} overscroll-none`}>{children}</body>
     </html>
   );
 }

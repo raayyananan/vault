@@ -58,8 +58,8 @@ const config: Config = {
         "surface-container": "rgb(var(--surface-container) / <alpha-value>)",
         "surface-container-high": "rgb(var(--surface-container-high) / <alpha-value>)",
         "surface-container-highest": "rgb(var(--surface-container-highest) / <alpha-value>)",
-        "shadow-color-standard": "var(--shadow-color-1)",
-        "shadow-color-emphasized": "var(--shadow-color-2)",
+        "shadow-color-standard": "var(--shadow-color-standard)",
+        "shadow-color-emphasized": "var(--shadow-color-emphasized)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

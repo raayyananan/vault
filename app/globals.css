@@ -54,7 +54,7 @@
   --surface-container-highest: 236 225 212;
 
   --shadow-color-standard: hsla(35deg 33% 85% / .33);
-  --shadow-color-emphasized: hsla(36deg 32% 75% / .33);
+  --shadow-color-emphasized: hsla(36deg 32% 65% / .33);
 
   --tw-shadow-color: var(--shadow-color-standard);
 

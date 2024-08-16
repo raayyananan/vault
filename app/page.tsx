@@ -11,7 +11,7 @@ export default function Home() {
       <div className="sidenav-container md:p-4 pr-0">
         <Sidenav />
       </div>
-      <div className="flex-auto flex flex-col gap-4 relative overflow-x-scroll hide-scrollbar md:px-4 md:pt-4">
+      <div className="flex-auto flex flex-col gap-4 relative overflow-x-scroll hide-scrollbar md:pr-4 md:pt-4">
         <ShowcaseScroller />
         <div className="flex-auto">
           <div 
