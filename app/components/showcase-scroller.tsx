@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useTransform, useScroll, easeInOut } from "framer-motion";
+import { motion, useTransform, useScroll, easeInOut, useMotionValueEvent } from "framer-motion";
 import { RefObject, useEffect, useRef, useState } from "react";
 import { data } from "../data/data";
 
@@ -22,18 +22,22 @@ export default function ShowcaseScroller() {
 
 function ScrollItem({ scrollerRef, index, image, name } : { scrollerRef :  RefObject<HTMLElement>, index: number, image: string, name: string }) {
     const ref = useRef(null);
-    const scrollHook = useScroll({
+    const { scrollXProgress } = useScroll({
         target: ref,
         container: scrollerRef,
         offset: ["start 1.15", "end -0.15"],   
         axis: "x",
     })
-    const yTransform = useTransform(scrollHook.scrollXProgress, [0, 0.5, 1], [24, -24, 24], {
+    const yTransform = useTransform(scrollXProgress, [0, 0.5, 1], [24, -24, 24], {
         ease: easeInOut
     });
-    const rotation = useTransform(scrollHook.scrollXProgress, [0, 1], [9, -9], {
+    const rotation = useTransform(scrollXProgress, [0, 1], [9, -9], {
         ease: easeInOut
     });
+
+    useMotionValueEvent(scrollXProgress, "change", (latest) => {
+        console.log("Container scroll: ", latest)
+    })
     
     const variants = {
         visible: (i: number) => ({
