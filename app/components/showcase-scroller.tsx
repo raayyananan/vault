@@ -24,6 +24,7 @@ function ScrollItem({ scrollerRef, index, image, name } : { scrollerRef :  RefOb
     const ref = useRef(null);
     const { scrollXProgress } = useScroll({
         target: ref,
+        layoutEffect: false,
         container: scrollerRef,
         offset: ["start 1.15", "end -0.15"],   
         axis: "x",
