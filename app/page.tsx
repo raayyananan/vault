@@ -8,15 +8,15 @@ import { data } from "./data/data";
 export default function Home() {
   return (
     <main className="h-screen w-screen flex p-0 gap-0">
-      <div className="sidenav-container p-4 pr-0">
+      <div className="sidenav-container md:p-4 pr-0">
         <Sidenav />
       </div>
-      <div className="flex-auto flex flex-col gap-4 relative overflow-x-scroll hide-scrollbar px-4 pt-4">
+      <div className="flex-auto flex flex-col gap-4 relative overflow-x-scroll hide-scrollbar md:px-4 md:pt-4">
         <ShowcaseScroller />
         <div className="flex-auto">
           <div 
             className="overflow-x-scroll flex gap-3 pr-2 pl-1"
-            style={{maskImage: 'linear-gradient(to right, transparent 0px, black 12px, black calc(100% - 12px), transparent 100%)'}}
+            style={{maskImage: 'linear-gradient(to right, transparent 0px, black 0px, black calc(100% - 18px), transparent 100%)'}}
             >
             <Chip 
               key={0} 
@@ -27,7 +27,8 @@ export default function Home() {
             {data.map((item, index) => (
               <Chip 
                 key={index + 1} 
-                icon={(<img className="rounded-full h-5 w-5" src={item.thumbnail} alt={item.name} />)} 
+                // icon={(<img className="rounded-full h-5 w-5" src={item.thumbnail} alt={item.name} />)} 
+                icon={(<div className="w-4 h-4 rounded-full bg-outline-variant"></div>)}
                 name={item.name}
               ></Chip>
             ))}

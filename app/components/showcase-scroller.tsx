@@ -10,9 +10,12 @@ export default function ShowcaseScroller() {
     return (
         <div 
             ref={scrollerRef}
-            className="w-full bg-gradient-to-b from-primary-container to-surface h-80 rounded-3xl flex items-center px-16 gap-16 overflow-x-scroll relative snap-x snap-mandatory"
-            style={{boxShadow: 'inset 1px 2px 16px -4px rgba(0,0,0,0.15)'}}
+            className="w-full bg-gradient-to-b from-primary-container to-surface h-96 md:rounded-3xl flex items-center px-8 gap-8 md:px-16 md:gap-16 overflow-x-scroll relative snap-x snap-mandatory
+                        md:shadow-[inset_1px_2px_12px_-4px_rgba(0,0,0,0.15)]"
             >
+                {data.map((item, index) => {
+                    return <ScrollItem key={index} index={index} scrollerRef={scrollerRef} />
+                })}
                 {data.map((item, index) => {
                     return <ScrollItem key={index} index={index} scrollerRef={scrollerRef} />
                 })}
@@ -45,9 +48,9 @@ function ScrollItem({ scrollerRef, index } : { scrollerRef :  RefObject<HTMLElem
     }
 
     return (
-        <motion.div
+        <motion.button
             ref={ref}
-            className="h-44 w-44 rounded-3xl bg-surface-variant elevation-medium flex-shrink-0 snap-center"
+            className="h-28 w-28 md:h-56 md:w-56 rounded-3xl bg-surface-variant shadow-lg shadow-inherit flex-shrink-0 snap-center"
             
             custom={index}
             initial={{ scale: 0 }}
@@ -58,10 +61,10 @@ function ScrollItem({ scrollerRef, index } : { scrollerRef :  RefObject<HTMLElem
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.97 }}
             viewport={{ root: scrollerRef }}
-            transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
+            transition={{ type: "tween", ease: "circOut", duration: 0.15 }}
         >
-            <button className="w-full h-full rounded-3xl"></button>
-        </motion.div>
+            {/* <div className="w-full h-full md:shadow-[inset_1px_2px_12px_-4px_rgb(var(--surface-container))]"></div> */}
+        </motion.button>
     )
 }
 
