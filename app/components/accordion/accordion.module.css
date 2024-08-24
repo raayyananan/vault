@@ -1,0 +1,31 @@
+.cont {
+    --duration: .6s;
+    --duration-short: 0.3s;
+
+    --md-sys-motion-easing-emphasized: cubic-bezier(0.4, 0, 0, 1); /* actual initial value is 0.2 instead of 0.4 */
+    --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1.0);
+    --md-sys-motion-easing-emphasized-accelerate: cubic-bezier(0.3, 0.0, 0.8, 0.15);
+  
+    --custom-easing: var(--md-sys-motion-easing-emphasized);
+    --custom-easing: linear(
+      0, 0.01 3.6%, 0.034, 0.074 9.1%, 0.128 11.4%, 0.271 15%, 0.544 18.3%,
+      0.66 20.6%, 0.765 24.6%, 0.845 30.4%, 0.883 35.1%, 0.916 40.6%, 0.942 47.2%,
+      0.963 55%, 0.991 74.4%, 1
+    );
+
+    @media (max-width: 640px) {
+        --duration: .45s;
+    }
+}
+.transition {
+    transition: all var(--duration) var(--custom-easing);
+}
+.item-closed {
+    transition: all var(--duration) var(--custom-easing), z-index var(--duration) step-end;
+}
+.item-open {
+    transition: all var(--duration) var(--custom-easing), z-index var(--duration) step-start;
+}
+.no-transition-important {
+    transition: none !important;
+}

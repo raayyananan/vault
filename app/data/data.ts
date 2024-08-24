@@ -31,4 +31,8 @@ export const data = [
         name: 'TV Girl',
         thumbnail: 'https://i.scdn.co/image/ab67616d00001e0232f5fec7a879ed6ef28f0dfd'
     },
+    {
+        name: 'old doll (piano cover)',
+        thumbnail: 'https://i1.sndcdn.com/artworks-000243048856-qvuygf-t500x500.jpg'
+    },
 ]

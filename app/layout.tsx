@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
+import Sidenav from "./components/sidenav";
 
 const raleway = Raleway({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
@@ -19,7 +20,14 @@ export default function RootLayout({
       <head>
         <title>Vault in the Clouds</title>
       </head>
-      <body className={`${raleway.className} overscroll-none`}>{children}</body>
+      <body className={`${raleway.className} overscroll-none transition-[scale]`}>
+      <main className="h-screen w-screen flex p-0 gap-0">
+        <div className="sidenav-container md:p-4 pr-0">
+          <Sidenav />
+        </div>
+        {children}
+      </main>
+      </body>
     </html>
   );
 }

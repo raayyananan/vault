@@ -16,6 +16,9 @@ export default function ShowcaseScroller() {
                 {data.map((item, index) => {
                     return <ScrollItem key={index} index={index} image={item.thumbnail} name={item.name} scrollerRef={scrollerRef} />
                 })}
+                {data.map((item, index) => {
+                    return <ScrollItem key={index} index={index} image={item.thumbnail} name={item.name} scrollerRef={scrollerRef} />
+                })}
         </div>
     )
 }
@@ -52,7 +55,7 @@ function ScrollItem({ scrollerRef, index, image, name } : { scrollerRef :  RefOb
     return (
         <motion.button
             ref={ref}
-            className="h-28 w-28 md:h-56 md:w-56 rounded-3xl bg-surface-variant shadow-lg shadow-shadow-color-emphasized flex-shrink-0 snap-center overflow-hidden relative"
+            className="h-28 w-28 md:h-56 md:w-56 rounded-3xl bg-surface-variant shadow-md shadow-shadow-color-emphasized flex-shrink-0 snap-center overflow-hidden relative"
             
             custom={index}
             initial={{ scale: 0 }}
@@ -65,7 +68,7 @@ function ScrollItem({ scrollerRef, index, image, name } : { scrollerRef :  RefOb
             viewport={{ root: scrollerRef }}
             transition={{ type: "tween", ease: "circOut", duration: 0.15, delay: 0 }}
         >
-            <div className="w-full h-full md:shadow-[inset_1px_2px_12px_-4px_rgb(var(--surface-container))]"></div>
+            <div className="w-full h-full md:shadow-[inset_1px_2px_8px_-2px_rgb(var(--surface-container))]"></div>
             {/* <img src={image} alt={name} className="w-full h-full object-cover border rounded-3xl border-surface-variant" /> */}
             {/* <div className="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-surface-variant scale-[1.01]"></div> */}
         </motion.button>
