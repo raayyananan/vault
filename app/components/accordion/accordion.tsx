@@ -48,7 +48,7 @@ function AccordionRoot ({ children, className }: { children: React.ReactNode, cl
             <div 
                 ref={accordionRef} 
                 className={
-                    `w-full accordion-container rounded-3xl`
+                    `w-full h-full accordion-container rounded-3xl`
                     }>
 
                 <div 
